@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankPera- Dashboard Admin Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="BANK 1.jpeg" alt="BankPera Logo">
+                <h2>BankPera</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#transactions"><i class="fas fa-exchange-alt"></i> Transaksi</a></li>
+                    <li><a href="#accounts"><i class="fas fa-user-circle"></i> Akun</a></li>
+                    <li><a href="#investments"><i class="fas fa-chart-line"></i> Investasi</a></li>
+                    <li><a href="#credit-cards"><i class="fas fa-credit-card"></i> Kartu Kredit</a></li>
+                    <li><a href="#loans"><i class="fas fa-hand-holding-usd"></i> Pinjaman</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Layanan</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Pengaturan</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Tambahkan tombol kembali di bagian bawah sidebar -->
+        <div class="back-to-portfolio">
+            <a href="portfolio vera.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Cari...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-menu">
+                    <img src="BANK 2.jpeg" alt="User Avatar">
+                    <span>Vera Oktaviani</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </header>
+            <section id="dashboard">
+                <h1>Dashboard</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Saldo</h3>
+                        <p id="totalBalance">Rp 0</p>
+                        <span class="trend positive"><i class="fas fa-arrow-up"></i> 3.48%</span>
+                    </div>
+                    <div class="card">
+                        <h3>Pendapatan</h3>
+                        <p id="totalIncome">Rp 0</p>
+                        <span class="trend positive"><i class="fas fa-arrow-up"></i> 12.8%</span>
+                    </div>
+                    <div class="card">
+                        <h3>Pengeluaran</h3>
+                        <p id="totalExpense">Rp 0</p>
+                        <span class="trend negative"><i class="fas fa-arrow-down"></i> 2.8%</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h2>Statistik Keuangan</h2>
+                    <canvas id="financeChart"></canvas>
+                </div>
+                <div class="recent-transactions">
+                    <h2>Transaksi Terbaru</h2>
+                    <table id="recentTransactionsTable">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Deskripsi</th>
+                                <th>Jumlah</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data transaksi akan diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="transactions" class="hidden">
+                <h1>Transaksi</h1>
+                <div class="transaction-filters">
+                    <input type="date" id="startDate" name="startDate">
+                    <input type="date" id="endDate" name="endDate">
+                    <select id="transactionType">
+                        <option value="all">Semua Tipe</option>
+                        <option value="deposit">Setoran</option>
+                        <option value="withdrawal">Penarikan</option>
+                        <option value="transfer">Transfer</option>
+                    </select>
+                    <button id="filterTransactions">Filter</button>
+                </div>
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Deskripsi</th>
+                            <th>Tipe</th>
+                            <th>Jumlah</th>
+                            <th>Saldo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data transaksi akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevPage">Sebelumnya</button>
+                    <span id="currentPage">Halaman 1</span>
+                    <button id="nextPage">Selanjutnya</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
