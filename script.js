@@ -104,7 +104,7 @@ displayTransactions(currentPage);
     const financeChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
             datasets: [{
                 label: 'Pendapatan',
                 data: [5000, 5900, 8000, 8100, 5600, 5500, 4000, 6500, 5900, 8000, 8100, 7500],
